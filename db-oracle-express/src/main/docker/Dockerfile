@@ -7,7 +7,7 @@ ENV ORACLE_PASSWORD="Password"
 # APP_USER_PASSWORD
 
 # step 2 - copy my local sql files to the container
-COPY setup/* /docker-entrypoint-initdb.d/
+#COPY setup/* /docker-entrypoint-initdb.d/
 
 # step 3 - copy local start scripts files to the container
 # COPY startup/* /docker-entrypoint-initdb.d/
@@ -16,3 +16,10 @@ COPY setup/* /docker-entrypoint-initdb.d/
 # USER oracle
 # WORKDIR ${ORACLE_BASE}
 # ENTRYPOINT ["container-entrypoint.sh"]
+
+# See https://github.com/smallinsky/infra/blob/c1f86189e05ae36529e1266a1088a1df5b326bb5/oracle/Dockerfile
+#COPY --chmod=777 *.sh /opt/oracle/
+COPY setup/* /docker-entrypoint-initdb.d/setup
+COPY startup/* /opt/oracle/scripts/startup/
+#COPY --chmod=777 certs/ /certs/
+ENTRYPOINT ["/opt/oracle/runOracle.sh"]

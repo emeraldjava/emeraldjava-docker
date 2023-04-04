@@ -1,0 +1,3 @@
+CONNECT pdbadmin/Password@XEPDB1;
+
+SELECT * FROM EMPLOYEE;
