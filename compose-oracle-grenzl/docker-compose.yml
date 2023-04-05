@@ -8,6 +8,9 @@ services:
       - ./startup:/docker-entrypoint-initdb.d/startup
     environment:
       - ORACLE_PASSWORD=Password
+      - ORACLE_DATABASE=MYDB
+      - APP_USER=myuser
+      - APP_USER_PASSWORD=mypassword
     ports:
       - 1521:1521
     healthcheck:

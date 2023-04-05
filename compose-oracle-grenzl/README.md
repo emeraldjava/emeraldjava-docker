@@ -10,3 +10,4 @@ Use docker-compose to build the oracle-xe express image
 - https://github.com/smallinsky/infra/blob/c1f86189e05ae36529e1266a1088a1df5b326bb5/oracle/Dockerfile
 
 - https://marschall.github.io/2020/04/12/oracle-docker-container.html
+- https://docs.oracle.com/database/121/CNCPT/cdblogic.htm#CNCPT89268
