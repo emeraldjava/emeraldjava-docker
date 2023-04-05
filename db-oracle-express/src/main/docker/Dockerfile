@@ -17,6 +17,9 @@ ENV ORACLE_PASSWORD="Password"
 # WORKDIR ${ORACLE_BASE}
 # ENTRYPOINT ["container-entrypoint.sh"]
 
+EXPOSE 1521
+EXPOSE 5500
+
 # See https://github.com/smallinsky/infra/blob/c1f86189e05ae36529e1266a1088a1df5b326bb5/oracle/Dockerfile
 #COPY --chmod=777 *.sh /opt/oracle/
 COPY setup/* /docker-entrypoint-initdb.d/setup

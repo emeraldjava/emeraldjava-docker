@@ -32,3 +32,4 @@ To access OEM Express, start your browser, and enter the OEM URL: https://localh
 - https://container-registry.oracle.com/ords/f?p=113:4:1327764185032:::4:P4_REPOSITORY,AI_REPOSITORY,AI_REPOSITORY_NAME,P4_REPOSITORY_NAME,P4_EULA_ID,P4_BUSINESS_AREA_ID:803,803,Oracle%20Database%20Express%20Edition,Oracle%20Database%20Express%20Edition,1,0&cs=3ALlzk3dLo5_qFSQGvCJdCZqL_QnQ9P2o4geyKlrhmVnIj2-GUicmeBsft57yd5qyyl3aVfQ7yvFcb7pD-emdIg
 - https://docs.oracle.com/database/121/CNCPT/cdblogic.htm#CNCPT89304
 - https://blog.devgenius.io/running-oracle-database-in-docker-containers-661b6f6e1d71
+- https://marschall.github.io/2020/04/12/oracle-docker-container.html
