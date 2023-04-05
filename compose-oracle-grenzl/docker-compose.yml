@@ -1,0 +1,20 @@
+version: '3'
+services:
+  oracledb:
+    image: gvenzl/oracle-xe:latest
+    volumes:
+      - oracle_data:/opt/oracle/oradata
+      - ./setup:/docker-entrypoint-initdb.d/setup
+      - ./startup:/docker-entrypoint-initdb.d/startup
+    environment:
+      - ORACLE_PASSWORD=Password
+    ports:
+      - 1521:1521
+    healthcheck:
+      test: [ "CMD", "bash", "-c", "echo 'select 1 from dual;' | sqlplus -s system/Password@XEPDB1" ]
+      interval: 10s
+      timeout: 10s
+      retries: 60
+      start_period: 60s
+volumes:
+  oracle_data:

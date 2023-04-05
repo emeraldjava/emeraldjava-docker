@@ -1,10 +1,10 @@
 # base image
-FROM gvenzl/oracle-xe:latest-faststart as base
+FROM gvenzl/oracle-xe:latest as base
 
 ENV ORACLE_PASSWORD="Password"
-# ORACLE_PASSWORD
-# APP_USER
-# APP_USER_PASSWORD
+# ENV ORACLE_DATABASE=""
+# ENV APP_USER
+# ENV APP_USER_PASSWORD
 
 # step 2 - copy my local sql files to the container
 COPY ./initdb/* /docker-entrypoint-initdb.d/
