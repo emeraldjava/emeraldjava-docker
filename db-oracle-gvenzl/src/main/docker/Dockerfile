@@ -1,5 +1,5 @@
 # base image
-FROM gvenzl/oracle-xe:latest as base
+FROM gvenzl/oracle-xe:latest-faststart as base
 
 ENV ORACLE_PASSWORD="Password"
 # ORACLE_PASSWORD
