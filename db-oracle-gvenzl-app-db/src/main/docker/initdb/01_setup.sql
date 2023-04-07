@@ -1,0 +1,14 @@
+-- From https://marschall.github.io/2020/04/12/oracle-docker-container.html
+-- user.sql
+ALTER SESSION SET CONTAINER = XEPDB1;
+SHOW CON_NAME;
+
+--CREATE USER myuser IDENTIFIED BY mypassword QUOTA UNLIMITED ON USERS;
+--GRANT CONNECT, RESOURCE TO myuser;
+--CREATE USER myuser IDENTIFIED BY "mypassword";
+
+-- permissions.sql
+--GRANT CONNECT TO myuser CONTAINER=CURRENT;
+--GRANT CREATE SESSION TO myuser CONTAINER=CURRENT;
+--GRANT RESOURCE TO myuser CONTAINER=CURRENT;
+--ALTER USER myuser QUOTA 100M ON USERS;
