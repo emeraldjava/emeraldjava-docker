@@ -1,0 +1,23 @@
+version: '3'
+services:
+  compose-oracle-gvenzl-app-db:
+    image: gvenzl/oracle-xe:latest
+    volumes:
+      - oracle_data:/opt/oracle/oradata
+      - ./setup:/docker-entrypoint-initdb.d/setup
+      - ./startup:/docker-entrypoint-initdb.d/startup
+    environment:
+      - ORACLE_PASSWORD=Password
+      - ORACLE_DATABASE=MYDB
+      - APP_USER=myuser
+      - APP_USER_PASSWORD=mypassword
+    ports:
+      - 1521:1521
+    healthcheck:
+      test: [ "CMD", "bash", "-c", "echo 'select 1 from dual;' | sqlplus -s system/Password@MYDB" ]
+      interval: 10s
+      timeout: 10s
+      retries: 60
+      start_period: 60s
+volumes:
+  oracle_data:

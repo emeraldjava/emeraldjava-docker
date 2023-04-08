@@ -1,6 +1,7 @@
-# compose-oracle-gvenzl
+# compose-oracle-gvenzl-app-db
 
-Use docker-compose to build the oracle-xe express image
+Use docker-compose to build the gvenlz oracle with custom app DB.
+
 
 ## docker-compose examples
 
