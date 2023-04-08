@@ -1,0 +1,3 @@
+-- FROM https://docs.oracle.com/database/121/CNCPT/cdblogic.htm#CNCPT89459
+CONNECT SYSTEM@XEPDB1;
+SELECT NAME, PDB ROM V$SERVICES ORDER BY PDB, NAME;
