@@ -18,6 +18,8 @@
 
     <modules>
         <module>db-oracle-express</module>
+        <module>db-oracle-gvenzl</module>
+        <module>db-oracle-gvenzl-app-db</module>
         <module>compose-fabric8</module>
         <module>springboot-db-app</module>
     </modules>
