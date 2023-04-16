@@ -24,3 +24,9 @@ https://www.atomicjar.com/2021/12/new-in-testcontainers-dec-2021/
     alias sqlp.system='sqlplus system/Password@//localhost:1521/XE'
     alias sqlp.pdb='sqlplus system/Password@//localhost:1521/XEPDB1'
     alias sqlp.mydb='sqlplus myuser/mypassword@//localhost:1521/MYDB'
+
+# Kubernetes
+
+    kubectl get nodes
+
+- https://birthday.play-with-docker.com/kubernetes-docker-desktop/
