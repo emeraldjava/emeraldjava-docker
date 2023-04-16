@@ -1,3 +1,5 @@
 #
 
-jdbc:h2:tcp://localhost:1521/opt/h2-data/myh2db
+jdbc:h2:tcp://localhost:${TCP_PORT}/${DB_NAME}
+
+jdbc:h2:tcp://localhost:1521/myh2db

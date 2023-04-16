@@ -5,15 +5,14 @@ RUNSCRIPT="java -cp h2.jar org.h2.tools.RunScript"
 
 runSql() {
   filename=$(basename "$1")
-  echo "filename $filename"
-  url="jdbc:h2:$DATA_DIR/${DBNAME}"
+  #echo "filename $filename"
+  url="jdbc:h2:$DATA_DIR/${DB_NAME}"
   echo "using url $url"
-  echo "RUNSCRIPT $RUNSCRIPT"
+  #echo "RUNSCRIPT $RUNSCRIPT"
   $RUNSCRIPT -script "$1" -url "$url"
 }
 
 mkdir -p "$DATA_DIR"
-
 if [ ! -f "$DATA_DIR/.initdb.completed" ]; then
   echo
   for f in /docker-entrypoint-initdb.d/*; do
