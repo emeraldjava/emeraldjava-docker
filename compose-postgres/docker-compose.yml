@@ -2,6 +2,7 @@ version: '3'
 
 services:
   db:
+    container_name: postgres-db
     image: postgres:latest
     restart: always
     ports:
@@ -10,12 +11,19 @@ services:
       POSTGRES_PASSWORD: 'postgres'
     volumes:
       - database_data:/var/lib/postgresql/data
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
   adminer:
     image: adminer
     restart: always
     ports:
       - 8080:8080
+  flyway:
+    image: flyway/flyway
+    command: -configFiles=./conf/flyway.config -locations=filesystem:./sql -connectRetries=60 migrate
+    volumes:
+      - ${PWD}/flyway/conf:/flyway/conf
+      - ${PWD}/flyway/sql:/flyway/sql
+    depends_on:
+      - db
 
 volumes:
   database_data:
